@@ -1,0 +1,43 @@
+[
+    {
+        "CustomerTypeId": 1, 
+        "CustomerTypeName": "VIP",
+        "Customers": [
+            {
+                "Id": "Cus123",
+                "Name": "Obama",
+                "Email": "obama@gmail.com",
+                "Age": 67,
+                "Image": "assets/image/obama.jpg"
+            },
+            {
+                "Id": "Cus456",
+                "Name": "Kim Jong Un",
+                "Email": "kimjongun@gmail.com",
+                "Age": 38,
+                "Image": "assets/image/kimjongun.jpg"
+            },
+            {
+                "Id": "Cus789",
+                "Name": "Vladimir Putin",
+                "Email": "putin@gmail.com",
+                "Age": 58,
+                "Image": "assets/image/putin.jpg"
+            },
+            {
+                "Id": "Cus101",
+                "Name": "Donald Trump",
+                "Email": "trump@gmail.com",
+                "Age": 75,
+                "Image": "assets/image/trump.jpg"
+            },
+            {
+                "Id": "Cus102",
+                "Name": "Joe Biden",
+                "Email": "biden@gmail.com",
+                "Age": 78,
+                "Image": "assets/image/biden.jpg"
+            }
+        ]
+    }
+]

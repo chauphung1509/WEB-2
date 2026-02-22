@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class Productservice {
 productsImage=[
-{"ProductId":"p1","ProductName":"Coca","Price":100,"Image":"assets/h1.png"},
-{"ProductId":"p2","ProductName":"Pepsi","Price":300,"Image":"assets/h2.png"},
-{"ProductId":"p3","ProductName":"Sting","Price":200,"Image":"assets/h3.png"},
+{"ProductId":"p1","ProductName":"Coca","Price":100,"Image":"assets/image/coca.jpg"},
+{"ProductId":"p2","ProductName":"Pepsi","Price":300,"Image":"assets/image/pepsi.png"},
+{"ProductId":"p3","ProductName":"Sting","Price":200,"Image":"assets/image/sting.jpg"},
 ]
 constructor() { }
 getProductsWithImages()

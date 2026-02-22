@@ -1,0 +1,33 @@
+/* CSS for service-product component */
+.service-product {
+  padding: 15px;
+}
+
+.service-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.service-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.service-button:hover {
+  background-color: #0056b3;
+}

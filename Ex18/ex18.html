@@ -1,0 +1,39 @@
+<h2>Ex18 - Customer Data</h2>
+
+<div style="margin-bottom: 20px;">
+  <strong>Debug Info:</strong>
+  <p>Customer Types Length: {{ customerTypes.length }}</p>
+  <p *ngIf="customerTypes.length === 0">No customer data loaded yet...</p>
+  <p *ngIf="customerTypes.length > 0">Data loaded successfully!</p>
+</div>
+
+<table class="main-table" *ngIf="customerTypes.length > 0">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let type of customerTypes">
+      <!-- Dòng tiêu đề loại khách -->
+      <tr class="type-row">
+        <td colspan="5">{{ type.CustomerTypeId }} - {{ type.CustomerTypeName }}</td>
+      </tr>
+      
+      <!-- Dữ liệu khách hàng -->
+      <tr *ngFor="let c of type.Customers">
+        <td>{{ c.Id }}</td>
+        <td>{{ c.Name }}</td>
+        <td>{{ c.Email }}</td>
+        <td>{{ c.Age }}</td>
+        <td class="img-cell">
+          <img [src]="c.Image" alt="{{ c.Name }}" />
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
