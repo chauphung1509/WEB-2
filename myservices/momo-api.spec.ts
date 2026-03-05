@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { MomoApi } from './momo-api';
+@Injectable({
+  providedIn: 'root',
+})
+export class MomoApi {
+   constructor(private http: HttpClient) {}
 
-describe('MomoApi', () => {
-  let service: MomoApi;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(MomoApi);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  createPayment(amount: number) {
+    return this.http.post<any>(
+      "http://localhost:3002/payment/momo",
+      { amount: amount }
+    );
+  }
+}
