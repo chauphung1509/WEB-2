@@ -1,0 +1,44 @@
+<section class="page">
+  <header class="page-header">
+    <h1>Fashion Admin</h1>
+    <a class="btn btn-primary" routerLink="/new">Add New Fashion</a>
+  </header>
+
+  <div class="toolbar">
+    <label for="style">Filter by style</label>
+    <select id="style" [(ngModel)]="selectedStyle">
+      <option value="">All styles</option>
+      <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+    </select>
+    <button class="btn" (click)="loadFashions()">Search</button>
+    <button class="btn btn-ghost" (click)="resetFilter()">Reset</button>
+  </div>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p *ngIf="loading">Loading...</p>
+
+  <table *ngIf="!loading" class="fashion-table">
+    <thead>
+      <tr>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Style</th>
+        <th>Created</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of fashions">
+        <td><img [src]="item.thumbnail" [alt]="item.title" /></td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.style }}</td>
+        <td>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+        <td>
+          <a class="btn btn-ghost" [routerLink]="['/', item._id]">View</a>
+          <a class="btn" [routerLink]="['/', item._id, 'edit']">Edit</a>
+          <button class="btn btn-danger" (click)="onDelete(item)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

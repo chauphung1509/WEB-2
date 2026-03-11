@@ -1,0 +1,44 @@
+<div class="container mt-4 login-wrap">
+    <div class="card login-card">
+        <div class="card-header">Login System</div>
+        <div class="card-body">
+            <form (ngSubmit)="onLogin()">
+                <div class="mb-3">
+                    <label for="username" class="form-label">User Name:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        [(ngModel)]="username"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        [(ngModel)]="password"
+                        required
+                    />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+
+            <p class="mt-3 text-success" *ngIf="message">{{ message }}</p>
+
+            <div class="mt-3 cookie-box">
+                <div class="fw-bold">Cookie Status</div>
+                <div>{{ cookieMessage }}</div>
+                <div *ngIf="cookieUser">
+                    <div>Username: {{ cookieUser.username }}</div>
+                    <div>Full Name: {{ cookieUser.fullName }}</div>
+                    <div>Role: {{ cookieUser.role }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

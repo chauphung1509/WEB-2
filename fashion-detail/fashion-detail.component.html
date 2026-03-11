@@ -1,0 +1,7 @@
+<section class="detail" *ngIf="fashion as item">
+  <a routerLink="/">Back</a>
+  <h1>{{ item.title }}</h1>
+  <p class="meta">{{ item.style }} | {{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+  <img [src]="item.thumbnail" [alt]="item.title" />
+  <article [innerHTML]="item.details"></article>
+</section>

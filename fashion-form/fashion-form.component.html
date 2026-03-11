@@ -1,0 +1,30 @@
+<section class="form-page">
+  <a routerLink="/">Back to list</a>
+  <h1>{{ isEdit ? 'Edit Fashion' : 'Add New Fashion' }}</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Style
+      <input type="text" formControlName="style" placeholder="Ex: STREET STYLE" />
+    </label>
+
+    <label>
+      Title
+      <input type="text" formControlName="title" placeholder="Fashion title" />
+    </label>
+
+    <label>
+      Thumbnail URL or Base64
+      <input type="text" formControlName="thumbnail" placeholder="https://... or data:image/..." />
+    </label>
+
+    <label>Details (WYSIWYG)</label>
+    <quill-editor formControlName="details" [styles]="{ height: '260px' }"></quill-editor>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+    <button class="btn" type="submit" [disabled]="saving">
+      {{ saving ? 'Saving...' : 'Save' }}
+    </button>
+  </form>
+</section>

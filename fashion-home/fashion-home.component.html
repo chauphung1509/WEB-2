@@ -1,0 +1,34 @@
+<section class="home">
+  <header class="hero">
+    <h1>Fashion Magazine</h1>
+    <p>Street style, trends, and runway highlights</p>
+  </header>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchStyle"
+      placeholder="Search by style (ex: STREET STYLE)"
+    />
+    <select [(ngModel)]="selectedStyle">
+      <option value="">Choose style</option>
+      <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+    </select>
+    <button (click)="applyFilter()">Filter</button>
+    <button class="ghost" (click)="clearFilter()">Reset</button>
+  </div>
+
+  <p *ngIf="loading">Loading...</p>
+
+  <ng-container *ngFor="let style of styleKeys()">
+    <h2>{{ style }}</h2>
+    <div class="grid">
+      <article class="card" *ngFor="let item of groupedFashions[style]">
+        <a [routerLink]="['/fashion', item._id]">
+          <img [src]="item.thumbnail" [alt]="item.title" />
+          <h3>{{ item.title }}</h3>
+        </a>
+      </article>
+    </div>
+  </ng-container>
+</section>

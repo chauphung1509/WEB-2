@@ -1,0 +1,18 @@
+.detail {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.detail img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  border: 2px solid #2d5d7b;
+  margin: 16px 0;
+}
+
+.meta {
+  color: #4c6f82;
+}
